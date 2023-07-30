@@ -1,0 +1,21 @@
+version: "3.9"
+   
+services:
+  web:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "15000:8000"
+    environment:
+      - SETTINGS_MODULE=wikiwander.settings
+    volumes:
+      - ./db.sqlite3:/code/db.sqlite3
+  wanderbot:
+    build: .
+    restart: "no"
+    command: python manage.py wander
+    environment:
+      - SETTINGS_MODULE=wikiwander.settings
+      - SKIP_ENTRYPOINT=true
+    volumes:
+      - ./db.sqlite3:/code/db.sqlite3

@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "wikiwander"
+version = "0.1.0"
+description = ""
+authors = ["Tristan Kernan <tristanmkernan@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^4.2.3"
+django-extensions = "^3.2.3"
+django-htmx = "^1.16.0"
+whitenoise = "^6.5.0"
+mwparserfromhell = "^0.6.4"
+requests = "^2.31.0"
+pywikibot = "^8.2.0"
+python-decouple = "^3.8"
+django-guardian = "^2.4.0"
+django-allauth = "^0.54.0"
+django-crispy-forms = "^2.0"
+django-filter = "^23.2"
+crispy-bootstrap5 = "^0.7"
+django-taggit = "^4.0.0"
+django-tables2 = "^2.6.0"
+gunicorn = "^21.2.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+ipdb = "^0.13.13"
+black = "^23.7.0"
+mypy = "^1.4.1"
+jupyterlab = "^4.0.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

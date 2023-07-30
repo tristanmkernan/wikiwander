@@ -1,0 +1,15 @@
+<ul class="list-group">
+  {% for object in object_list reversed %}
+    <a href="https://en.wikipedia.org/wiki/{{ object.title }}"
+       target="_blank"
+       class="list-group-item list-group-item-action {% if forloop.last %}active{% endif %} d-flex align-items-center"
+       {% if forloop.last %}aria-current="true"{% endif %}>
+      {{ object.title }}
+      {% if forloop.last %}
+        <div class="spinner-border spinner-border-sm ms-auto" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      {% endif %}
+    </a>
+  {% endfor %}
+</ul>

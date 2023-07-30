@@ -1,0 +1,17 @@
+{% extends "core/skeleton.html" %}
+
+{% block title %}Home{% endblock %}
+{% block body %}
+
+  <main>
+    <div class="container">
+      <p class="lead my-4">
+        Explore connections within the world.
+      </p>
+      <div hx-get="{% url 'wikipage-history-list-partial' %}" hx-trigger="every 3s">
+        {% include "core/wikipage/partials/history-list.html" %}
+      </div>
+    </div>
+  </main>
+
+{% endblock %}
